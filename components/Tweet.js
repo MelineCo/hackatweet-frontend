@@ -6,9 +6,9 @@ function Tweet(props) {
     return (
         <div className={styles.tweet}>
             <div className={styles.infos}>
-                <img className={styles.profilePic} src="/egg.png" alt="profile-pic" />
-                <p className={styles.userInfos}>{props.firstname}</p>
-                <p className={styles.greyInfos}> @{props.username} - x hours</p>
+                <img className="profilePic" src="/egg.png" alt="profile-pic" />
+                <p className="userInfos">{props.firstname}</p>
+                <p className="greyInfos"> @{props.username} - x hours</p>
             </div>
             <p className={styles.text}>{props.tweet}</p>
             <div className={styles.likes}>

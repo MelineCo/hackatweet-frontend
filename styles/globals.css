@@ -3,8 +3,43 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #171f2b;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.logo{
+  width: 100px;
+  margin: 2rem;
+}
+
+.threePanels{
+  display: flex;
+}
+
+.profilePic {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.userInfos {
+  color: white;
+  font-weight: bold;
+}
+
+.greyInfos {
+  color: #657786;
+  font-size: 0.9rem;
+}
+
+.logOutButton {
+  color: #657786;
+  border: #657786 1px solid;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #171f2b;
+  padding: 0.2rem 1rem;
 }

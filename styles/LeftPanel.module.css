@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottomContainer {
+    margin: 3rem;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.userInfos{
+    line-height: 1.5rem;
+}

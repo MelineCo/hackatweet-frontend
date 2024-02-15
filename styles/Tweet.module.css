@@ -11,21 +11,7 @@
     gap: 1rem;
 }
 
-.profilePic {
-    width: 50px;
-    border-radius: 50%;
-}
 
-.userInfos {
-    color: white;
-    font-weight: bold;
-
-}
-
-.greyInfos {
-    color: #657786;
-    font-size: 0.9rem;
-}
 
 .text {
     color: white;
