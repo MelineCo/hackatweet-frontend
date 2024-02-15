@@ -11,32 +11,39 @@ function Home() {
       firstname: 'tempFirstname',
       username: 'tempusername',
       tweet: cuicui,
-      creationDate : new Date()
-  }
+      creationDate: new Date()
+    }
 
-  fetch(`http://localhost:3000/tweets/new`, {
+    fetch(`http://localhost:3000/tweets/new`, {
       method: 'POST',
       headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(newTweet)
-  })
-.then(response => response.json())
-.then(data => {
-  if (data.result) {
-              console.log(data)
-              setCuicui('');
-          }
-});
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result) {
+          console.log(data)
+          setCuicui('');
+        }
+      });
   }
 
   return (
     <div>
       <main className={styles.main}>
         <h1 className={styles.title}>Home</h1>
-        <input className={styles.cuicuiInput} onChange={(e) => setCuicui(e.target.value)} value={cuicui} placeholder='Tweet a tweet' />
-        <button className={styles.tweetButton} onClick={() => handleTweet()}>Tweet</button>
+
+        <div className={styles.newTweetContainer}>
+          <input className={styles.cuicuiInput} onChange={(e) => setCuicui(e.target.value)} value={cuicui} placeholder="WHAT'S UP?" />
+          <div className={styles.submitTweet}>
+            <p className={styles.tweetLength}>{cuicui.length}/ 280</p>
+            <button className={styles.tweetButton} onClick={() => handleTweet()}>Tweet</button>
+          </div>
+        </div>
+
         <LastTweets />
       </main>
     </div>

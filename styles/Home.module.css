@@ -1,11 +1,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 4rem 0;
-  background-color: black;
+  padding: 2rem 0;
+  background-color: #171f2b;
 }
 
 .title {
@@ -15,11 +14,42 @@
   font-size: 1.2rem;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.newTweetContainer{
+  width : 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.cuicuiInput{
+  width: 100%;
+  height: 2.5rem;
+  color : white;
+  background-color: #171f2b;
+  border: none;
+  border-bottom: 1px solid #657786;
+}
+
+.submitTweet {
+  display : flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+  width: 200px;
+}
+
+.tweetButton{
+  background-color: #75beef;
+  height: 1.6rem;
+  width: 5rem;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight : bold;
+}
+
+.tweetLength {
+  color: white;
+  font-size: 0.8rem;
 }

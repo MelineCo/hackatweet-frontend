@@ -20,7 +20,7 @@ function LastTweets() {
       });
 
     return (
-        <div>
+        <div className={styles.tweetsContainer}>
             {tweets}
         </div>
     );

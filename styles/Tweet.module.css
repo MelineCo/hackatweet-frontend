@@ -1,29 +1,46 @@
 .tweet {
-    background-color: black;
-    width: 600px;
-    padding: 1rem;
-    border: 0.5px solid white;
+    width: 100%;
+    padding: 1.5rem;
+    border-top: 0.1px solid #657786;
 }
 
 .infos {
     display: flex;
+    align-items: center;
     font-size: 1rem;
     gap: 1rem;
 }
 
 .profilePic {
-    width: 35px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 .userInfos {
     color: white;
+    font-weight: bold;
+
 }
 
 .greyInfos {
-    color: grey;
+    color: #657786;
+    font-size: 0.9rem;
 }
 
 .text {
     color: white;
     font-size: 0.8rem;
+}
+
+/* .likes{
+    display: flex;
+    gap: 1rem;
+} */
+
+.iconHeart {
+    color: white;
+}
+
+.numberLikes{
+    color: white;
 }
