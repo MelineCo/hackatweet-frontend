@@ -1,7 +1,9 @@
 import styles from '../styles/SignUp.module.css';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 function SignUp() {
+    const router = useRouter();
     const [firstname, setFirstname] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -29,6 +31,8 @@ function SignUp() {
                     setFirstname('');
                     setUsername('');
                     setPassword('');
+                    // Redirection vers la page index
+                    router.push('/')
                 }
 			});
     }

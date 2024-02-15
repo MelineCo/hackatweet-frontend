@@ -19,6 +19,7 @@ function SignIn() {
           console.log(data.result)
           setSignInUsername('');
           setSignInPassword('');
+          // Redirection vers la page index
           router.push('/')
         }
       });
