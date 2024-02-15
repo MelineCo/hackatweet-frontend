@@ -1,0 +1,29 @@
+.tweet {
+    background-color: black;
+    width: 600px;
+    padding: 1rem;
+    border: 0.5px solid white;
+}
+
+.infos {
+    display: flex;
+    font-size: 1rem;
+    gap: 1rem;
+}
+
+.profilePic {
+    width: 35px;
+}
+
+.userInfos {
+    color: white;
+}
+
+.greyInfos {
+    color: grey;
+}
+
+.text {
+    color: white;
+    font-size: 0.8rem;
+}
