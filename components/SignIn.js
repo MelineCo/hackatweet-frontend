@@ -19,7 +19,7 @@ function SignIn() {
           console.log(data.result)
           setSignInUsername('');
           setSignInPassword('');
-          router.push('/index')
+          router.push('/')
         }
       });
   };
