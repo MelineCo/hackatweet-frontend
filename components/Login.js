@@ -1,5 +1,6 @@
 import styles from '../styles/Login.module.css';
-import SignUp from './SignUp';
+import SignUp from './SignUp'; 
+import SignIn from './SignIn';
 
 function Login() {
     return (
@@ -11,6 +12,7 @@ function Login() {
                 <h2 className={styles.h2}>Join hackatweet today.</h2>
                 
                 <SignUp />
+                <SignIn />
             </div>
         </div>
     );
