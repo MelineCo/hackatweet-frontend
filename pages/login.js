@@ -3,6 +3,7 @@ import SignUp from './SignUp';
 import SignIn from './SignIn';
 
 function Login() {
+
     return (
         <div className={styles.container}>
             <img className={styles.bigImage} src="/twitter.png" alt="Twitter-backgroung-img" />

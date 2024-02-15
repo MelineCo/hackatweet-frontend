@@ -1,28 +1,25 @@
 import { useState } from 'react';
 import styles from '../styles/SignIn.module.css';
+import { useRouter } from 'next/router';
 
 function SignIn() {
-
-  const [signInUsername, setSignInUsername] = useState('')
+  const router = useRouter();
+  const [signInUsername, setSignInUsername] = useState('');
   const [signInPassword, setSignInPassword] = useState('');
 
 
   const handleSignIn = () => {
-    console.log('click')
-
     fetch('http://localhost:3000/users/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: signInUsername, password: signInPassword }),
     }).then(response => response.json())
       .then(data => {
-        console.log(data)
-
         if (data.result) {
           console.log(data.result)
           setSignInUsername('');
           setSignInPassword('');
-
+          router.push('/index')
         }
       });
   };
