@@ -4,6 +4,9 @@
   align-items: center;
   min-height: 100vh;
   padding: 2rem 0;
+  border-right: 1px solid #657786;
+  border-left: 1px solid #657786;
+  width: 600px;
 }
 
 .title {

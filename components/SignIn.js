@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import styles from '../styles/SignIn.module.css';
 import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { login } from '../reducers/user';
 
 function SignIn() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [signInUsername, setSignInUsername] = useState('');
   const [signInPassword, setSignInPassword] = useState('');
@@ -17,6 +20,8 @@ function SignIn() {
       .then(data => {
         if (data.result) {
           console.log(data.result)
+          console.log(data)
+          dispatch(login({ username: data.username, token: data.token, firstname: data.firstname }));
           setSignInUsername('');
           setSignInPassword('');
           // Redirection vers la page index
