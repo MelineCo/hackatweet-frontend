@@ -12,6 +12,7 @@ function SignIn() {
 
 
   const handleSignIn = () => {
+    console.log('click signin')
     fetch('http://localhost:3000/users/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

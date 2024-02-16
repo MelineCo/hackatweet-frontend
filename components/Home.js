@@ -1,19 +1,23 @@
 import styles from '../styles/Home.module.css';
 import LastTweets from './LastTweets';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadTweets, addTweet } from '../reducers/tweets';
 
 function Home() {
+  const dispatch = useDispatch();
+  const tweets = useSelector((state) => state.tweets.value);
+  const [tweetsData, setTweetsData] = useState([])
   const [cuicui, setCuicui] = useState('');
 
+  /* Ajout d'un tweet */
   const handleTweet = () => {
-
     const newTweet = {
       firstname: 'tempFirstname',
       username: 'tempusername',
       tweet: cuicui,
       creationDate: new Date()
     }
-
     fetch(`http://localhost:3000/tweets/new`, {
       method: 'POST',
       headers: {
@@ -26,10 +30,21 @@ function Home() {
       .then(data => {
         if (data.result) {
           console.log(data)
+          dispatch(addTweet(newTweet));
           setCuicui('');
         }
       });
   }
+
+  /* Chargement des tweets */
+  useEffect(() => {
+    fetch('http://localhost:3000/tweets/')
+      .then(response => response.json())
+      .then(data => {
+        dispatch(loadTweets(data.data));
+        setTweetsData(tweets);
+      });
+  }, [tweetsData]);
 
   return (
     <div>
@@ -44,7 +59,7 @@ function Home() {
           </div>
         </div>
 
-        <LastTweets />
+        <LastTweets tweetsData={tweetsData}/>
       </main>
     </div>
   );
