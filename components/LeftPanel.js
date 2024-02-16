@@ -8,7 +8,8 @@ function LeftPanel() {
     const dispatch = useDispatch();
 
     const handleLogout= () =>{
-        dispatch(logout())   
+        dispatch(logout()) 
+        router.push('/login')   
     };
 
     const user = useSelector((state) => state.user.value);
