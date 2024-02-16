@@ -19,7 +19,6 @@ function SignIn() {
     }).then(response => response.json())
       .then(data => {
         if (data.result) {
-          console.log(data.result)
           console.log(data)
           dispatch(login({ username: data.username, token: data.token, firstname: data.firstname }));
           setSignInUsername('');

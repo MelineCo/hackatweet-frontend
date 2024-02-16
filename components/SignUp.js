@@ -1,8 +1,11 @@
 import styles from '../styles/SignUp.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { login } from '../reducers/user';
 
 function SignUp() {
+    const dispatch = useDispatch();
     const router = useRouter();
     const [firstname, setFirstname] = useState('')
     const [username, setUsername] = useState('')
@@ -28,6 +31,7 @@ function SignUp() {
 			.then(data => {
 				if (data.result) {
                     console.log(data)
+                    dispatch(login({ username: data.username, token: data.token, firstname: data.firstname }));
                     setFirstname('');
                     setUsername('');
                     setPassword('');
