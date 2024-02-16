@@ -1,8 +1,17 @@
 import styles from '../styles/LeftPanel.module.css';
 import { useRouter } from 'next/router';
+import {useSelector, useDispatch} from 'react-redux'
+import { logout } from '../reducers/user';
 
 function LeftPanel() {
     const router = useRouter();
+    const dispatch = useDispatch();
+
+    const handleLogout= () =>{
+        dispatch(logout())   
+    };
+
+    const user = useSelector((state) => state.user.value);
 
     return (
         <div className={styles.container}>
@@ -11,10 +20,10 @@ function LeftPanel() {
                 <div className={styles.user}>
                     <img className="profilePic" src="/egg.png" alt="profile-picture" />
                     <div className={styles.userInfos}>
-                        <p><span className="userInfos">Anthony</span><br /><span className="greyInfos"> @shifoumi</span></p>
+                        <p><span className="userInfos">{user.firstname}</span><br /><span className="greyInfos"> @{user.username}</span></p>
                     </div>
                 </div>
-                <button className="logOutButton">Logout</button>
+                <button onClick={()=> handleLogout()} className="logOutButton">Logout</button>
             </div>
         </div>
     );
